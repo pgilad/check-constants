@@ -20,25 +20,33 @@ function parseContents(contents) {
 }
 
 function checkAst(ast, options) {
-    var ignoredTypes = ['ObjectExpression', 'VariableDeclaration'];
+    var ignoredTypes = ['ObjectExpression'];
     var enforceConst = options.enforceConst;
     var ignored = options.ignored;
     var errors = [];
 
     rocambole.moonwalk(ast, function (node) {
+        //only validate numbers
         if (typeof node.value !== 'number') {
             return;
         }
+        //skip ignored numbers
         if (contains(ignored, node.value)) {
             return;
         }
         var parent = node.parent.parent;
-        if (!enforceConst && contains(ignoredTypes, parent.type)) {
+        //skip ignored types
+        if (contains(ignoredTypes, parent.type)) {
+            return;
+        }
+        //skip variable declaration unless
+        if (!enforceConst && parent.type === 'VariableDeclaration') {
             return;
         }
         if (parent.left && parent.left.type === 'MemberExpression') {
             return;
         }
+        //if enforceConst
         if (enforceConst && parent.kind === 'const') {
             return;
         }

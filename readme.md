@@ -5,12 +5,13 @@
 [![NPM Downloads](http://img.shields.io/npm/dm/check-constants.svg?style=flat)](https://npmjs.org/package/check-constants)
 [![Build Status](http://img.shields.io/travis/pgilad/check-constants.svg?style=flat)](https://travis-ci.org/pgilad/check-constants)
 
-## WORK-IN-PROGRESS
-
 This project is a simplified version of [buddy.js](https://github.com/danielstjules/buddy.js).
-I really loved it, but found the Promise structure and over-complicated code too much for my needs.
+I initially really liked that project, but found the Promise based and over-complicated code too much for my needs.
 
-Also this project parses the code using Esprima and not UglifyJs.
+Also this project parses the code using Esprima
+ (actually [Rocambole](https://github.com/millermedeiros/rocambole)) and not UglifyJs.
+
+**This is a work in progress. Expect possible breaking changes until it reaches version 1.0**
 
 ## Usage
 
@@ -36,10 +37,40 @@ $ npm install -g check-constants
 ```
 
 ## The Output
-*TBD*
+```js
+[{
+    "code": "i = i + 2",
+    "value": 2,
+    "loc": {
+        "start": {
+            "line": 5,
+            "column": 28
+            },
+        "end": {
+            "line": 5,
+            "column": 29
+            }
+        }
+}]
+```
 
 ## API
-*TBD*
+
+### enforceConst
+
+Type: `Boolean`
+
+Default: `false`
+
+Whether to force variable declarations to be defined with `const`
+
+### ignored
+
+Type: `Array`
+
+Default: `[0, 1]`
+
+What numbers should be ignored. By default only [0, 1] are ignored.
 
 ## License
-Copyright (©) 2014 Gilad Peleg. Licensed under the MIT license.
+Copyright © 2014 Gilad Peleg. Licensed under the MIT license.
