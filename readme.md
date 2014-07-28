@@ -10,23 +10,30 @@ I really loved but, but found the Promise structure and over-complicated code to
 
 Also this project parses the code using Esprima and not UglifyJs.
 
-## Install
-
-Install with [npm](https://npmjs.org/package/check-constants)
-
-```bash
-$ npm install --save check-constants
-```
-
 ## Usage
 
+### Programmatic
+
+```bash
+$ npm install --save-dev check-constants
+```
+
 ```js
-var contents = fs.readFileSync('./contents.js').toString();
+var fs = require('fs');
+var checkConstants = require('check-constants');
+
+var contents = fs.readFileSync('./contents.js', 'utf8');
 var errors = checkConstants(contents);
 // -> errors will contain possible variables that need extraction
 ```
 
-## CLI
+### Command Line
+
+```bash
+$ npm install -g check-constants
+```
+
+## The Output
 
 ## API
 
