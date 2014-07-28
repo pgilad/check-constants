@@ -36,6 +36,23 @@ var errors = checkConstants(contents);
 $ npm install -g check-constants
 ```
 
+```bash
+# Just regular
+$ check-constants --file file.js
+
+# pipe a file
+$ cat file.js | check-constants
+
+# Format output to json
+$ check-constants --file file.js --format json
+
+# Use a json file to set your options
+$ check-constants --file file.js --options check-constants.json
+
+# Check the current version of the cli app
+$ check-constants --version
+```
+
 ## The Output
 ```js
 [{
