@@ -71,7 +71,6 @@ describe('check-constants', function () {
     it('parse a complex case', function () {
         var contents = fs.readFileSync('./test/fixtures/complex.js').toString();
         var errors = checkConstants(contents);
-        console.log(errors[0].loc.start);
         expect(errors).to.not.be.empty();
         expect(errors).to.have.length(1);
         expect(errors[0].value).to.equal(2);
