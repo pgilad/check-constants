@@ -87,7 +87,7 @@ Type: `Array`
 
 Default: `[0, 1]`
 
-What numbers should be ignored. By default only [0, 1] are ignored.
+What numbers should be ignored. By default only `[0, 1]` are ignored.
 
 ## License
 Copyright © 2014 Gilad Peleg. Licensed under the MIT license.
