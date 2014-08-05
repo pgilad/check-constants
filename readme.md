@@ -13,28 +13,19 @@ Also this project parses the code using Esprima
 
 **This is a work in progress. Expect possible breaking changes until it reaches version 1.0**
 
+![](media/table-output.png)
+
 ## Usage
 
-### Programmatic
-
-```bash
-$ npm install --save-dev check-constants
-```
-
-```js
-var fs = require('fs');
-var checkConstants = require('check-constants');
-
-var contents = fs.readFileSync('./contents.js', 'utf8');
-var errors = checkConstants(contents);
-// -> errors will contain possible variables that need extraction
-```
-
 ### Command Line
+
+#### Installation
 
 ```bash
 $ npm install -g check-constants
 ```
+
+#### Examples
 
 ```bash
 # Easily check a file by path
@@ -62,7 +53,24 @@ $ check-constants --version
 $ check-constants --help
 ```
 
-![](media/table-output.png)
+### Programmatic
+
+#### Installation
+
+```bash
+$ npm install --save-dev check-constants
+```
+
+#### Examples
+
+```js
+var fs = require('fs');
+var checkConstants = require('check-constants');
+
+var contents = fs.readFileSync('./contents.js', 'utf8');
+var errors = checkConstants(contents);
+// -> errors will contain possible variables that need extraction
+```
 
 ## The Output
 ```js
@@ -98,7 +106,8 @@ Type: `Array`
 
 Default: `[0, 1]`
 
-What numbers should be ignored. By default only `[0, 1]` are ignored.
+What numbers should be ignored.
 
 ## License
-Copyright © 2014 Gilad Peleg. Licensed under the MIT license.
+Copyright © 2014 Gilad Peleg.
+Licensed under the MIT license.
