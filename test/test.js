@@ -63,7 +63,7 @@ describe('check-constants', function () {
     it('deal with custom ignored numbers', function () {
         var contents = fs.readFileSync('./test/fixtures/ignored.js').toString();
         var errors = checkConstants(contents, {
-            ignored: [0, 1, 0.13]
+            ignore: [0, 1, 0.13]
         });
         expect(errors).to.be.empty();
     });

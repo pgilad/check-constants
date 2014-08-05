@@ -1,54 +1,54 @@
 {
-    "name": "check-constants",
-    "version": "0.1.0",
-    "description": "Find numbers that should be extracted to a var or const statement",
-    "homepage": "https://github.com/pgilad/check-constants",
-    "bugs": "https://github.com/pgilad/check-constants/issues",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/pgilad/check-constants"
-    },
-    "scripts": {
-        "test": "mocha -R spec ./test/test.js",
-        "watch": "mocha -w -R spec ./test/test.js"
-    },
-    "bin": {
-        "check-constants": "./bin/check-constants.js"
-    },
-    "keywords": [
-        "constants",
-        "const",
-        "vars",
-        "esprima",
-        "rocambole",
-        "parse",
-        "validation",
-        "code-style"
-    ],
-    "author": {
-        "name": "Gilad Peleg",
-        "email": "giladp007@gmail.com"
-    },
-    "files": [
-        "license.md",
-        "index.js",
-        "lib",
-        "bin"
-    ],
-    "engines": {
-        "node": ">=0.10.0"
-    },
-    "dependencies": {
-        "cli-table": "^0.3.0",
-        "lodash.contains": "^2.4.1",
-        "lodash.defaults": "^2.4.1",
-        "rocambole": "^0.3.6",
-        "yargs": "^1.2.6"
-    },
-    "devDependencies": {
-        "expect.js": "*",
-        "mocha": "*"
-    },
-    "license": "MIT"
+  "name": "check-constants",
+  "version": "0.1.0",
+  "description": "Find numbers that should be extracted to a var or const statement",
+  "homepage": "https://github.com/pgilad/check-constants",
+  "bugs": "https://github.com/pgilad/check-constants/issues",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pgilad/check-constants"
+  },
+  "scripts": {
+    "test": "mocha -R spec ./test/test.js",
+    "watch": "mocha -w -R spec ./test/test.js"
+  },
+  "bin": {
+    "check-constants": "./bin/check-constants.js"
+  },
+  "keywords": [
+    "constants",
+    "const",
+    "vars",
+    "esprima",
+    "rocambole",
+    "parse",
+    "validation",
+    "code-style"
+  ],
+  "author": {
+    "name": "Gilad Peleg",
+    "email": "giladp007@gmail.com"
+  },
+  "files": [
+    "license.md",
+    "index.js",
+    "lib",
+    "bin"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "cli-table": "^0.3.0",
+    "commander": "^2.3.0",
+    "lodash.contains": "^2.4.1",
+    "lodash.defaults": "^2.4.1",
+    "rocambole": "^0.3.6"
+  },
+  "devDependencies": {
+    "expect.js": "*",
+    "mocha": "*"
+  },
+  "license": "MIT"
 }

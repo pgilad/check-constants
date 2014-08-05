@@ -37,21 +37,32 @@ $ npm install -g check-constants
 ```
 
 ```bash
-# Just regular
-$ check-constants --file file.js
+# Easily check a file by path
+$ check-constants file.js
 
-# pipe a file
+# Check a file by piping it
 $ cat file.js | check-constants
 
-# Format output to json
-$ check-constants --file file.js --format json
+# Format output as json
+$ check-constants file.js --reporter json
 
-# Use a json file to set your options
-$ check-constants --file file.js --options check-constants.json
+# Override ignored numbers
+$ check-constants file.js --ignore 1,5,13
+
+# Disable ignored numbers
+$ check-constants file.js --disable-ignore
+
+# Make sure variables are declared as const
+$ check-constants --enforce-const file.js
 
 # Check the current version of the cli app
 $ check-constants --version
+
+# Show help menu
+$ check-constants --help
 ```
+
+![](media/table-output)
 
 ## The Output
 ```js
@@ -81,7 +92,7 @@ Default: `false`
 
 Whether to force variable declarations to be defined with `const`
 
-### ignored
+### ignore
 
 Type: `Array`
 
