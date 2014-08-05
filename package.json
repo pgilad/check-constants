@@ -1,6 +1,6 @@
 {
   "name": "check-constants",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Find numbers that should be extracted to a var or const statement",
   "homepage": "https://github.com/pgilad/check-constants",
   "bugs": "https://github.com/pgilad/check-constants/issues",
