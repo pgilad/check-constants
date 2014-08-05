@@ -22,7 +22,7 @@ Also this project parses the code using Esprima
 #### Installation
 
 ```bash
-$ npm install -g check-constants
+$ npm install --global check-constants
 ```
 
 #### Examples
