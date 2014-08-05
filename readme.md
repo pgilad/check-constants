@@ -62,7 +62,7 @@ $ check-constants --version
 $ check-constants --help
 ```
 
-![](media/table-output)
+![](media/table-output.png)
 
 ## The Output
 ```js
