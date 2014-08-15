@@ -3,8 +3,6 @@
 var fs = require('fs');
 var path = require('path');
 var stdin = process.stdin;
-var stdout = process.stdout;
-var stderr = process.stderr;
 
 var program = require('commander');
 var Table = require('cli-table');
@@ -26,7 +24,7 @@ program
     .parse(process.argv);
 
 function outputJSON(output) {
-    stdout.write(JSON.stringify(output) + '\n');
+    console.log(JSON.stringify(output) + '\n');
     process.exit(1);
 }
 
@@ -43,7 +41,7 @@ function outputTable(output) {
             err.loc.end.column
         ]);
     });
-    stdout.write(table.toString());
+    console.log(table.toString());
     process.exit(1);
 }
 
@@ -57,10 +55,11 @@ function run(contents) {
     try {
         output = checkConstants(contents, options);
     } catch (e) {
-        return stderr.write('There was an error processing the JS.\n' + e.toString() + '\n');
+        console.error('There was an error processing the JS.\n' + e.toString() + '\n');
+        return;
     }
     if (!output.length) {
-        stdout.write('There are no constants that need extraction.\n');
+        console.log('There are no constants that need extraction.\n');
         process.exit(0);
     }
     if (program.reporter && program.reporter.toLowerCase() === 'json') {

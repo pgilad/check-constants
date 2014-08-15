@@ -1,5 +1,5 @@
 # check-constants
-> Find numbers that should be extracted to a var or const statement
+> Find numbers that should be extracted as a declaration statement
 
 [![NPM Version](http://img.shields.io/npm/v/check-constants.svg?style=flat)](https://npmjs.org/package/check-constants)
 [![NPM Downloads](http://img.shields.io/npm/dm/check-constants.svg?style=flat)](https://npmjs.org/package/check-constants)
