@@ -43,7 +43,7 @@ function outputTable(output) {
             chalk.gray('line ' + el.loc.start.line),
             chalk.gray('col ' + el.loc.start.column),
             el.value,
-            chalk.cyan('code ' + el.code)
+            chalk.cyan(el.code)
         ];
         if (el.file !== prevfile) {
             headers[i] = el.file;
