@@ -30,7 +30,7 @@ function outputFooter(output) {
 }
 
 function outputJSON(output) {
-    console.log(JSON.stringify(output));
+    console.log(JSON.stringify(output, null, 2));
     outputFooter(output);
     process.exit(1);
 }
