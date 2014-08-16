@@ -75,6 +75,7 @@ var errors = checkConstants(contents);
 ## The Output
 ```js
 [{
+    "file": "index.js",
     "code": "i = i + 2",
     "value": 2,
     "loc": {
@@ -107,6 +108,15 @@ Type: `Array`
 Default: `[0, 1]`
 
 What numbers should be ignored.
+
+### file
+
+Type: `String`
+
+Default: `null`
+
+Filename being checked if available (i.e not from a stream). Will be attached
+to the result object.
 
 ## License
 Copyright © 2014 Gilad Peleg.
