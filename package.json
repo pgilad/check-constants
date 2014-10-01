@@ -44,7 +44,7 @@
     "commander": "^2.3.0",
     "lodash.contains": "^2.4.1",
     "lodash.defaults": "^2.4.1",
-    "log-symbols": "^1.0.0",
+    "log-symbols": "1.0.1",
     "rocambole": "^0.3.6",
     "text-table": "^0.2.0"
   },
