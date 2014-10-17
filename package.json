@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "chalk": "^0.5.1",
-    "commander": "^2.3.0",
+    "commander": "^2.4.0",
     "lodash.contains": "^2.4.1",
     "lodash.defaults": "^2.4.1",
     "log-symbols": "1.0.1",
