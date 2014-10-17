@@ -72,6 +72,12 @@ var errors = checkConstants(contents);
 // -> errors will contain possible variables that need extraction
 ```
 
+### Build Time
+
+Check-Constants can also be used in conjunction with other javascript build systems, such as:
+
+* [gulp-check-constants](https://github.com/pgilad/gulp-check-constants)
+
 ## The Output
 ```js
 [{
