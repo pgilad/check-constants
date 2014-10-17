@@ -1,3 +1,2 @@
-var lib = require('./lib/check-constants');
-
-module.exports = module.checkConstants = lib.checkConstants;
+exports.inspect = require('./lib/inspect');
+exports.log = require('./lib/log');

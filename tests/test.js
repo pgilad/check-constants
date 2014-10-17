@@ -6,14 +6,14 @@ var checkConstants = require('../index');
 describe('check-constants', function () {
     it('parse a file without constants', function () {
         var contents = fs.readFileSync('./tests/fixtures/empty.js').toString();
-        var errors = checkConstants(contents);
+        var errors = checkConstants.inspect(contents);
         expect(errors).to.be.an('array');
         expect(errors).to.be.empty();
     });
 
     it('parse a file with basic constants', function () {
         var contents = fs.readFileSync('./tests/fixtures/basic.js').toString();
-        var errors = checkConstants(contents);
+        var errors = checkConstants.inspect(contents);
         expect(errors).to.not.be.empty();
         expect(errors).to.have.property(0);
         var first = errors[0];
@@ -38,13 +38,13 @@ describe('check-constants', function () {
 
     it('parse a corrected file with constants', function () {
         var contents = fs.readFileSync('./tests/fixtures/corrected.js').toString();
-        var errors = checkConstants(contents);
+        var errors = checkConstants.inspect(contents);
         expect(errors).to.be.empty();
     });
 
     it('parse a corrected file with vars but not constants', function () {
         var contents = fs.readFileSync('./tests/fixtures/consts.js').toString();
-        var errors = checkConstants(contents, {
+        var errors = checkConstants.inspect(contents, {
             enforceConst: true
         });
         expect(errors).to.not.be.empty();
@@ -54,7 +54,7 @@ describe('check-constants', function () {
 
     it('deal with default ignored numbers', function () {
         var contents = fs.readFileSync('./tests/fixtures/ignored.js').toString();
-        var errors = checkConstants(contents);
+        var errors = checkConstants.inspect(contents);
         expect(errors).to.not.be.empty();
         expect(errors).to.have.length(1);
         expect(errors[0].value).to.equal(0.13);
@@ -62,7 +62,7 @@ describe('check-constants', function () {
 
     it('deal with custom ignored numbers', function () {
         var contents = fs.readFileSync('./tests/fixtures/ignored.js').toString();
-        var errors = checkConstants(contents, {
+        var errors = checkConstants.inspect(contents, {
             ignore: [0, 1, 0.13]
         });
         expect(errors).to.be.empty();
@@ -70,7 +70,7 @@ describe('check-constants', function () {
 
     it('parse a complex case', function () {
         var contents = fs.readFileSync('./tests/fixtures/complex.js').toString();
-        var errors = checkConstants(contents);
+        var errors = checkConstants.inspect(contents);
         expect(errors).to.not.be.empty();
         expect(errors).to.have.length(1);
         expect(errors[0].value).to.equal(2);
