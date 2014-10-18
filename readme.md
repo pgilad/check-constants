@@ -87,6 +87,7 @@ var errors = checkConstants(contents);
 Check-Constants can also be used in conjunction with other javascript build systems, such as:
 
 * [gulp-check-constants](https://github.com/pgilad/gulp-check-constants)
+* [grunt-check-constants](https://github.com/pgilad/grunt-check-constants)
 
 ## The Output
 ```js
