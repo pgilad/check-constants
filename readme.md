@@ -5,13 +5,17 @@
 [![NPM Downloads](http://img.shields.io/npm/dm/check-constants.svg?style=flat)](https://npmjs.org/package/check-constants)
 [![Build Status](http://img.shields.io/travis/pgilad/check-constants.svg?style=flat)](https://travis-ci.org/pgilad/check-constants)
 
-This project is a simplified version of [buddy.js](https://github.com/danielstjules/buddy.js).
-I initially really liked that project, but found the Promise based and over-complicated code too much for my needs.
-
-Also this project parses the code using Esprima
+This project is a simplified version of [buddy.js](https://github.com/danielstjules/buddy.js). I found that project
+overly complicated for my needs. Also this project parses the code using Esprima
  (actually [Rocambole](https://github.com/millermedeiros/rocambole)) and not UglifyJs.
 
-**This is a work in progress. Expect possible breaking changes until it reaches version 1.0**
+Given a file `basic.js`:
+```js
+function getTotal(subtotal) {
+    var beforeTax = subtotal + 9.99;
+    return beforeTax + (beforeTax * 0.13);
+}
+```
 
 ![](media/table-output.png)
 
