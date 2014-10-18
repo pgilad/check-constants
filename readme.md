@@ -16,6 +16,10 @@ function getTotal(subtotal) {
     return beforeTax + (beforeTax * 0.13);
 }
 ```
+Running `check-contants basic.js` will find numbers that should be extracted to a declaration statement.
+
+The idea is that numbers that you might reuse are better cached and extracted so that they can be easily
+changed and controlled from 1 place.
 
 ![](media/table-output.png)
 
