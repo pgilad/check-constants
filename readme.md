@@ -10,12 +10,14 @@ overly complicated for my needs. Also this project parses the code using Esprima
  (actually [Rocambole](https://github.com/millermedeiros/rocambole)) and not UglifyJs.
 
 Given a file `basic.js`:
+
 ```js
 function getTotal(subtotal) {
     var beforeTax = subtotal + 9.99;
     return beforeTax + (beforeTax * 0.13);
 }
 ```
+
 Running `check-contants basic.js` will find numbers that should be extracted to a declaration statement.
 
 The idea is that numbers that you might reuse are better cached and extracted so that they can be easily
