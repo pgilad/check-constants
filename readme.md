@@ -18,12 +18,25 @@ function getTotal(subtotal) {
 }
 ```
 
-Running `check-contants basic.js` will find numbers that should be extracted to a declaration statement.
+Running `check-constants basic.js` will produce the following results:
+![Basic output example of check-constants](media/table-output.png)
 
-The idea is that numbers that you might reuse are better cached and extracted so that they can be easily
-changed and controlled from 1 place.
+The idea is that numbers should be extracted as declared constants, so that they could be easily controlled & changed.
 
-![](media/table-output.png)
+The example above, could be re-written as:
+
+```js
+var FIXED_COST = 9.99;
+var TAX = 0.13;
+
+function getTotal(subtotal) {
+    var beforeTax = subtotal + FIXED_COST;
+    return beforeTax + (beforeTax * TAX);
+}
+```
+
+Now let's see what happens when we run `check-constants` on the corrected file:
+![Corrected output example of check-constants](media/corrected.png)
 
 ## Usage
 
