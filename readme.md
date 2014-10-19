@@ -9,23 +9,25 @@ This project is a simplified version of [buddy.js](https://github.com/danielstju
 overly complicated for my needs. Also this project parses the code using Esprima
  (actually [Rocambole](https://github.com/millermedeiros/rocambole)) and not UglifyJs.
 
-Given a file `basic.js`:
-
 ```js
+//basic.js
+
 function getTotal(subtotal) {
     var beforeTax = subtotal + 9.99;
     return beforeTax + (beforeTax * 0.13);
 }
 ```
 
-Running `check-constants basic.js` will produce the following results:
+`check-constants` will raise the following problems when checking this file:
 ![Basic output example of check-constants](media/table-output.png)
 
 The idea is that numbers should be extracted as declared constants, so that they could be easily controlled & changed.
 
-The example above, could be re-written as:
+The example above, could be re-factored to:
 
 ```js
+//corrected.js
+
 var FIXED_COST = 9.99;
 var TAX = 0.13;
 
