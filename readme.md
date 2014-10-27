@@ -151,5 +151,5 @@ Filename being checked if available (i.e not from a stream). Will be attached
 to the result object.
 
 ## License
-Copyright © 2014 Gilad Peleg.
-Licensed under the MIT license.
+
+MIT ©[Gilad Peleg](http://giladpeleg.com)
