@@ -1,3 +1,4 @@
+
 # check-constants
 > Find numbers that should be extracted as a declaration statement
 
@@ -5,9 +6,8 @@
 [![NPM Downloads](http://img.shields.io/npm/dm/check-constants.svg?style=flat)](https://npmjs.org/package/check-constants)
 [![Build Status](http://img.shields.io/travis/pgilad/check-constants.svg?style=flat)](https://travis-ci.org/pgilad/check-constants)
 
-This project is a simplified version of [buddy.js](https://github.com/danielstjules/buddy.js). I found that project
-overly complicated for my needs. Also this project parses the code using Esprima
- (actually [Rocambole](https://github.com/millermedeiros/rocambole)) and not UglifyJs.
+The idea behind this project is that numbers should be extracted as declared constants (or vars), so that they could be easily controlled & changed.
+Imagine that you have a function which will calculate the total sum owed after taxes:
 
 ```js
 //basic.js
@@ -18,10 +18,12 @@ function getTotal(subtotal) {
 }
 ```
 
-`check-constants` will raise the following problems when checking this file:
-![Basic output example of check-constants](media/table-output.png)
+As you can see, in a month from now, and in a large code base, we might not remember what are those `9.99` and `0.13`, and
+also, suppose we have several instances of the number `0.13` and we want to change it? Now you need to refactor
+all occurrences hoping you didn't miss anything or over-do it.
 
-The idea is that numbers should be extracted as declared constants, so that they could be easily controlled & changed.
+`check-constants` will find the numbers that you should extract as a declaration statement:
+![Basic output example of check-constants](media/table-output.png)
 
 The example above, could be re-factored to:
 
@@ -40,6 +42,9 @@ function getTotal(subtotal) {
 Now let's see what happens when we run `check-constants` on the corrected file:
 ![Corrected output example of check-constants](media/corrected.png)
 
+This project uses [Rocambole](https://github.com/millermedeiros/rocambole) to parse your JS,
+and it's a simplified version of [buddy.js](https://github.com/danielstjules/buddy.js) which I found overcomplicated and too heavy.
+
 ## Usage
 
 ### Command Line
@@ -53,6 +58,20 @@ $ npm install --global check-constants
 #### Examples
 
 ```bash
+# show the help menu
+$ check-constants --help
+
+  Usage: check-constants [options] <file>
+
+  Options:
+
+    -h, --help                   output usage information
+    -V, --version                output the version number
+    -e, --enforce-const          require literals to be defined using const
+    -i, --ignore <numbers>       list numbers to ignore (default: 0,1)
+    -I, --disable-ignore         disables the ignore list
+    -r, --reporter [table|json]  specify the reporter to use (default: table)
+
 # Easily check a file by path
 $ check-constants file.js
 
@@ -65,7 +84,7 @@ $ check-constants file.js --reporter json
 # Override ignored numbers
 $ check-constants file.js --ignore 1,5,13
 
-# Disable ignored numbers
+# Disable default ignored numbers (0,1)
 $ check-constants file.js --disable-ignore
 
 # Make sure variables are declared as const
@@ -73,9 +92,6 @@ $ check-constants --enforce-const file.js
 
 # Check the current version of the cli app
 $ check-constants --version
-
-# Show help menu
-$ check-constants --help
 ```
 
 ### Programmatic
@@ -99,7 +115,7 @@ var errors = checkConstants(contents);
 
 ### Build Time
 
-Check-Constants can also be used in conjunction with other javascript build systems, such as:
+`check-constants` can also be used in conjunction with other javascript build systems, such as:
 
 * [gulp-check-constants](https://github.com/pgilad/gulp-check-constants)
 * [grunt-check-constants](https://github.com/pgilad/grunt-check-constants)

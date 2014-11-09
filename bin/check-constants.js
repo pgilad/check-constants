@@ -49,7 +49,7 @@ function run(contents, params) {
     process.exit(1);
 }
 
-//assume any unconsumed option is a filepath
+//assume any unconsumed option is a file path
 var filePath = program.args;
 if (filePath && filePath.length) {
     return run(fs.readFileSync(path.resolve(process.cwd(), filePath[0]), 'utf8'), {
