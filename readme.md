@@ -1,4 +1,3 @@
-
 # check-constants
 > Find numbers that should be extracted as a declaration statement
 

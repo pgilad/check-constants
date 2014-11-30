@@ -14,7 +14,7 @@ function list(val) {
 program
     .description('Find numbers that should be extracted to a var or const statement')
     .version(require('../package.json').version)
-    .usage('[options] <file>')
+    .usage('[options] [file]')
     .option('-e, --enforce-const', 'require literals to be defined using const')
     .option('-i, --ignore <numbers>', 'list numbers to ignore (default: 0,1)', list)
     .option('-I, --disable-ignore', 'disables the ignore list')
