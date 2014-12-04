@@ -3,7 +3,7 @@ var expect = require('expect.js');
 var fs = require('fs');
 var checkConstants = require('../index');
 
-describe('check-constants', function () {
+describe('check-constants - numbers', function () {
     it('parse a file without constants', function () {
         var contents = fs.readFileSync('./tests/fixtures/empty.js').toString();
         var errors = checkConstants.inspect(contents);
