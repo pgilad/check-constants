@@ -39,4 +39,8 @@ describe('check-constants - strings', function () {
         expect(errors[1].loc.end.column).to.equal(38);
         expect(errors[1].value).to.equal('Current memory usage: %s');
     });
+
+    it('should work with strings in ignore list');
+    it('should check various string constants usage');
+    it('should force const declaration when option is on');
 });
