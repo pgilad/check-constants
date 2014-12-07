@@ -1,50 +1,50 @@
 {
-    "name": "check-constants",
-    "version": "0.7.0",
-    "description": "Find numbers and strings that should be extracted as a declaration statement",
-    "license": "MIT",
-    "repository": "pgilad/check-constants",
-    "author": {
-        "name": "Gilad Peleg",
-        "email": "giladp007@gmail.com",
-        "url": "http://giladpeleg.com"
-    },
-    "scripts": {
-        "test": "mocha -R spec tests/",
-        "watch": "mocha -w -R spec tests/"
-    },
-    "bin": "./bin/check-constants",
-    "keywords": [
-        "constants",
-        "const",
-        "vars",
-        "esprima",
-        "rocambole",
-        "parse",
-        "validation",
-        "code-style"
-    ],
-    "main": "index.js",
-    "files": [
-        "index.js",
-        "lib",
-        "bin"
-    ],
-    "engines": {
-        "node": ">=0.10.0"
-    },
-    "dependencies": {
-        "chalk": "^0.5.1",
-        "commander": "^2.5.0",
-        "get-stdin": "^3.0.2",
-        "lodash.contains": "^2.4.1",
-        "lodash.defaults": "^2.4.1",
-        "log-symbols": "^1.0.1",
-        "rocambole": "^0.3.6",
-        "text-table": "^0.2.0"
-    },
-    "devDependencies": {
-        "expect.js": "*",
-        "mocha": "*"
-    }
+  "name": "check-constants",
+  "version": "1.0.0",
+  "description": "Find numbers and strings that should be extracted as a declaration statement",
+  "license": "MIT",
+  "repository": "pgilad/check-constants",
+  "author": {
+    "name": "Gilad Peleg",
+    "email": "giladp007@gmail.com",
+    "url": "http://giladpeleg.com"
+  },
+  "scripts": {
+    "test": "mocha -R spec tests/",
+    "watch": "mocha -w -R spec tests/"
+  },
+  "bin": "./bin/check-constants",
+  "keywords": [
+    "constants",
+    "const",
+    "vars",
+    "esprima",
+    "rocambole",
+    "parse",
+    "validation",
+    "code-style"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib",
+    "bin"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "commander": "^2.5.0",
+    "get-stdin": "^3.0.2",
+    "lodash.contains": "^2.4.1",
+    "lodash.defaults": "^2.4.1",
+    "log-symbols": "^1.0.1",
+    "rocambole": "^0.3.6",
+    "text-table": "^0.2.0"
+  },
+  "devDependencies": {
+    "expect.js": "*",
+    "mocha": "*"
+  }
 }
