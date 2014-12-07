@@ -203,7 +203,7 @@ Default: `null`
 Filename being checked if available (i.e not from a stream). Will be attached
 to the result object.
 
-### .log[reporter] (results)
+### .log\[reporter](results)
 
 #### reporter
 
