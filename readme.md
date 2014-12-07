@@ -1,3 +1,4 @@
+
 # check-constants
 > Find numbers and strings that should be extracted as a declaration statement
 
@@ -114,9 +115,10 @@ $ npm install --save-dev check-constants
 ```js
 var fs = require('fs');
 var checkConstants = require('check-constants');
+var options = {};
 
 var contents = fs.readFileSync('./contents.js', 'utf8');
-var errors = checkConstants(contents);
+var errors = checkConstants.inspect(contents, options);
 // -> errors will contain possible variables that need extraction
 ```
 
@@ -148,15 +150,27 @@ var errors = checkConstants(contents);
 
 ## API
 
-### strings
+`check-constants` exposes the following API:
+
+### .inspect(contents, options)
+
+#### contents
+
+`String` - the contents to check
+
+#### options
+
+Options is an optional object containing the following properties:
+
+##### strings
 
 Type: `Boolean`
 
-Default: `false
+Default: `false`
 
-whether to check for strings as well as numbers.
+Whether to check for strings as well as numbers.
 
-### minLength
+##### minLength
 
 Type: `Number`
 
@@ -164,15 +178,15 @@ Default: `0`
 
 Only used when option `strings` is true. Limits the minimum string length checking.
 
-### enforceConst
+##### enforceConst
 
 Type: `Boolean`
 
 Default: `false`
 
-whether to enforce declarations to be used with `const`.
+Whether to enforce declarations to be used with `const`.
 
-### ignore
+##### ignore
 
 Type: `Array`
 
@@ -180,7 +194,7 @@ Default: `[0, 1]`
 
 Strings and numbers to ignore
 
-### file
+##### file
 
 Type: `String`
 
@@ -188,6 +202,16 @@ Default: `null`
 
 Filename being checked if available (i.e not from a stream). Will be attached
 to the result object.
+
+### .log[reporter] (results)
+
+#### reporter
+
+Which reporter to use. Currently supported `json` and `table`.
+
+#### results
+
+The resulting object from `.inspect()`
 
 ## License
 

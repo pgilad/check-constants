@@ -1,7 +1,7 @@
 {
     "name": "check-constants",
     "version": "0.7.0",
-    "description": "Find numbers that should be extracted as a declaration statement",
+    "description": "Find numbers and strings that should be extracted as a declaration statement",
     "license": "MIT",
     "repository": "pgilad/check-constants",
     "author": {
