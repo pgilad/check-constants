@@ -1,11 +1,11 @@
 # check-constants
-> Find numbers that should be extracted as a declaration statement
+> Find numbers and strings that should be extracted as a declaration statement
 
 [![NPM Version](http://img.shields.io/npm/v/check-constants.svg?style=flat)](https://npmjs.org/package/check-constants)
 [![NPM Downloads](http://img.shields.io/npm/dm/check-constants.svg?style=flat)](https://npmjs.org/package/check-constants)
 [![Build Status](http://img.shields.io/travis/pgilad/check-constants.svg?style=flat)](https://travis-ci.org/pgilad/check-constants)
 
-The idea behind this project is that numbers should be extracted as declared constants (or vars), so that they could be easily controlled & changed.
+The idea behind this project is that numbers and strings should be extracted as declared constants (or vars), so that they could be easily controlled & changed.
 Imagine that you have a function which will calculate the total sum owed after taxes:
 
 ```js
@@ -58,18 +58,26 @@ $ npm install --global check-constants
 
 ```bash
 # show the help menu
-$ check-constants --help
+❯ check-constants --help
 
   Usage: check-constants [options] <file>
 
   Options:
 
-    -h, --help                   output usage information
-    -V, --version                output the version number
-    -e, --enforce-const          require literals to be defined using const
-    -i, --ignore <numbers>       list numbers to ignore (default: 0,1)
-    -I, --disable-ignore         disables the ignore list
-    -r, --reporter [table|json]  specify the reporter to use (default: table)
+    -h, --help                    output usage information
+    -V, --version                 output the version number
+    -e, --enforce-const           require literals to be defined using const
+    -i, --ignore <numbers>        list numbers to ignore (default: 0,1)
+    -I, --disable-ignore          disables the ignore list
+    -s, --strings                 check strings as well
+    -m, --min-length [minLength]  minimum length of strings to be checked [0]
+    -r, --reporter [reporter]     specify the reporter to use [table|json] (default: table)
+
+  Examples:
+
+    $ check-constants index.js
+    $ check-constants --reporter json index.js
+    $ cat index.js | check-constants
 
 # Easily check a file by path
 $ check-constants file.js
@@ -140,13 +148,29 @@ var errors = checkConstants(contents);
 
 ## API
 
+### strings
+
+Type: `Boolean`
+
+Default: `false
+
+whether to check for strings as well as numbers.
+
+### minLength
+
+Type: `Number`
+
+Default: `0`
+
+Only used when option `strings` is true. Limits the minimum string length checking.
+
 ### enforceConst
 
 Type: `Boolean`
 
 Default: `false`
 
-Whether to force variable declarations to be defined with `const`
+whether to enforce declarations to be used with `const`.
 
 ### ignore
 
@@ -154,7 +178,7 @@ Type: `Array`
 
 Default: `[0, 1]`
 
-What numbers should be ignored.
+Strings and numbers to ignore
 
 ### file
 

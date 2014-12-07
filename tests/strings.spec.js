@@ -90,4 +90,15 @@ describe('check-constants - strings', function () {
         });
         expect(errors).to.be.empty();
     });
+
+    it('should verify min string length works', function () {
+        var contents = fs.readFileSync('./tests/fixtures/strings.js').toString();
+        var errors = checkConstants.inspect(contents, {
+            strings: true,
+            minLength: 3
+        });
+        expect(errors).to.not.be.empty();
+        expect(errors).to.have.length(1);
+        expect(errors[0].value).to.not.equal('fs');
+    });
 });
