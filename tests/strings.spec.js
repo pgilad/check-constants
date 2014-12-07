@@ -40,7 +40,54 @@ describe('check-constants - strings', function () {
         expect(errors[1].value).to.equal('Current memory usage: %s');
     });
 
-    it('should work with strings in ignore list');
-    it('should check various string constants usage');
-    it('should force const declaration when option is on');
+    it('should work with strings in ignore list', function () {
+        var contents = fs.readFileSync('./tests/fixtures/strings.js').toString();
+        var errors = checkConstants.inspect(contents, {
+            strings: true,
+            ignore: ['fs']
+        });
+        expect(errors).to.not.be.empty();
+        expect(errors).to.have.length(1);
+        expect(errors[0].value).to.not.equal('fs');
+    });
+    it('should check various string constants usage', function () {
+        var contents = fs.readFileSync('./tests/fixtures/complex-strings.js').toString();
+        var errors = checkConstants.inspect(contents, {
+            strings: true
+        });
+        expect(errors).to.not.be.empty();
+        expect(errors).to.have.length(3);
+        expect(errors[0].value).to.equal('.');
+        expect(errors[0].loc.start.line).to.equal(2);
+        expect(errors[1].value).to.equal('hello');
+        expect(errors[1].loc.start.line).to.equal(5);
+        expect(errors[2].value).to.equal('there');
+        expect(errors[2].loc.start.line).to.equal(5);
+    });
+    it('should pass corrected strings example', function () {
+        var contents = fs.readFileSync('./tests/fixtures/strings-corrected.js').toString();
+        var errors = checkConstants.inspect(contents, {
+            strings: true
+        });
+        expect(errors).to.be.empty();
+    });
+
+    it('should force const declaration when option is on', function () {
+        var contents = fs.readFileSync('./tests/fixtures/strings-corrected.js').toString();
+        var errors = checkConstants.inspect(contents, {
+            strings: true,
+            enforceConst: true
+        });
+        expect(errors).to.not.be.empty();
+        expect(errors).to.have.length(3);
+    });
+
+    it('should pass corrected const strings example', function () {
+        var contents = fs.readFileSync('./tests/fixtures/strings-const-corrected.js').toString();
+        var errors = checkConstants.inspect(contents, {
+            strings: true,
+            enforceConst: true
+        });
+        expect(errors).to.be.empty();
+    });
 });
