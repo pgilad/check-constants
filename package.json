@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "chalk": "^0.5.1",
-    "commander": "^2.5.0",
+    "commander": "^2.5.1",
     "get-stdin": "^3.0.2",
     "lodash.contains": "^2.4.1",
     "lodash.defaults": "^2.4.1",
