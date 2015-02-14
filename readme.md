@@ -1,4 +1,3 @@
-
 # check-constants
 > Find numbers and strings that should be extracted as a declaration statement
 
@@ -61,7 +60,7 @@ $ npm install --global check-constants
 # show the help menu
 ❯ check-constants --help
 
-  Usage: check-constants [options] <file>
+  Usage: check-constants [options] <file ...>
 
   Options:
 
@@ -82,6 +81,9 @@ $ npm install --global check-constants
 
 # Easily check a file by path
 $ check-constants file.js
+
+# Check files by using glob pattern
+$ check-constants js/**/*.js
 
 # Check a file by piping it
 $ cat file.js | check-constants

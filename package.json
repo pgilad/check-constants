@@ -13,7 +13,7 @@
     "test": "mocha -R spec tests/",
     "watch": "mocha -w -R spec tests/"
   },
-  "bin": "./bin/check-constants",
+  "bin": "./bin/check-constants.js",
   "keywords": [
     "constants",
     "const",
@@ -35,11 +35,13 @@
   },
   "dependencies": {
     "chalk": "^0.5.1",
-    "commander": "^2.5.1",
-    "get-stdin": "^3.0.2",
+    "commander": "^2.6.0",
+    "get-stdin": "^4.0.1",
+    "glob": "^4.3.5",
     "lodash.contains": "^2.4.1",
-    "lodash.defaults": "^2.4.1",
+    "lodash.defaults": "^3.0.0",
     "log-symbols": "^1.0.1",
+    "map-async": "^0.1.1",
     "rocambole": "^0.3.6",
     "text-table": "^0.2.0"
   },
