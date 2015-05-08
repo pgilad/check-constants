@@ -34,15 +34,15 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "chalk": "^0.5.1",
-    "commander": "^2.6.0",
+    "chalk": "^1.0.0",
+    "commander": "^2.8.1",
     "get-stdin": "^4.0.1",
-    "glob": "^4.3.5",
-    "lodash.contains": "^2.4.1",
-    "lodash.defaults": "^3.0.0",
-    "log-symbols": "^1.0.1",
+    "glob": "^5.0.5",
+    "lodash.contains": "^2.4.3",
+    "lodash.defaults": "^3.1.1",
+    "log-symbols": "^1.0.2",
     "map-async": "^0.1.1",
-    "rocambole": "^0.3.6",
+    "rocambole": "^0.6.0",
     "text-table": "^0.2.0"
   },
   "devDependencies": {
