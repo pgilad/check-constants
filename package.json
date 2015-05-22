@@ -37,7 +37,7 @@
     "chalk": "^1.0.0",
     "commander": "^2.8.1",
     "get-stdin": "^4.0.1",
-    "glob": "^5.0.5",
+    "glob": "^5.0.9",
     "lodash.contains": "^2.4.3",
     "lodash.defaults": "^3.1.1",
     "log-symbols": "^1.0.2",
